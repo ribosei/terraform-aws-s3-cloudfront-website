@@ -111,6 +111,10 @@ resource "aws_cloudfront_response_headers_policy" "main" {
       override     = true
       frame_option = "DENY"
     }
+
+    content_security_policy {
+      content_security_policy = "frame-ancestors 'none'"
+      override = true
+    }
   }
 }
-
